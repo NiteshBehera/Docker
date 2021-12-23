@@ -1,0 +1,17 @@
+version: "3"
+services: 
+	redis:
+	    image: redis
+	    deploy:
+		replicas: 1
+	        resources:
+			limits
+			cpus: 0.01
+			memory: 100M
+        db:
+	     image: postgres:9.4
+	      deploy:
+		replicas: 2
+		placement:
+			constraints:
+			- node.hostname == node1
